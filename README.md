@@ -6,11 +6,10 @@ Este repositório contém uma aplicação React Native (Expo) que consome a API 
 
 Antes de iniciar as etapas, você deve garantir que a aplicação tenha acesso aos dados:
 
-1.  **TMDB API Key:** Registre-se em [themoviedb.org](https://www.themoviedb.org/), crie um perfil de desenvolvedor e obtenha sua **API Key (v3 auth)**.
-2.  **GitHub Secrets:** No seu repositório (após o Fork), vá em *Settings > Secrets and variables > Actions* e crie um segredo chamado `TMDB_API_KEY` com o valor da sua chave.
-3.  **Fork:** Certifique-se de estar trabalhando no seu próprio Fork para ter permissão de execução das Actions.
+1.  **Fork:** Certifique-se de estar trabalhando no seu próprio Fork para ter permissão de execução das Actions.
+2.  **TMDB API Key:** Registre-se em [themoviedb.org](https://www.themoviedb.org/), crie um perfil de desenvolvedor e obtenha sua **API Key (v3 auth)**.
+3.  **GitHub Secrets:** No seu repositório (após o Fork), vá em *Settings > Secrets and variables > Actions* e crie um segredo chamado `TMDB_API_KEY` com o valor da sua chave.
 
----
 
 ## Etapa 1: Garantia de Qualidade (Testes)
 
@@ -21,7 +20,6 @@ O primeiro passo de qualquer pipeline é garantir que o código novo não quebre
 * Crie um Job de teste que utilize o **Node.js 20** (para compatibilidade com os métodos do Expo).
 * O job deve instalar as dependências usando `npm ci` (para garantir uma instalação fiel ao lockfile) e executar o script de teste padrão.
 
----
 
 ## Etapa 2: Entrega Web e GitHub Pages
 
@@ -35,7 +33,6 @@ Nesta etapa, você deve transformar o código em um site estático e publicá-lo
     * **Importante:** O GitHub Pages ignora pastas que começam com sublinhado (como a `_expo` gerada pelo build). Crie um arquivo vazio chamado `.nojekyll` na pasta de saída (`dist`) para desativar esse comportamento.
 4.  **Deploy:** Utilize as Actions oficiais do GitHub para fazer o upload do artefato da pasta `dist` e realizar o deploy para o ambiente `github-pages`.
 
----
 
 ## Etapa 3: Build Nativo e Release de APK
 
@@ -50,7 +47,6 @@ A última etapa consiste em gerar o binário para instalação em dispositivos A
     * Utilize o número da execução (`github.run_number`) para taguear a versão automaticamente (ex: `v1`, `v2`).
     * Anexe o arquivo APK à Release criada.
 
----
 
 ## Validação da Atividade
 
@@ -59,7 +55,6 @@ A atividade será considerada concluída quando:
 * O site da aplicação estiver acessível e consumindo dados da TMDB via URL do GitHub Pages.
 * Uma **Release** aparecer na página inicial do repositório contendo o arquivo `app-release.apk` disponível para download.
 
----
 
 ## Etapas Bônus
 
@@ -121,7 +116,7 @@ A nuvem moderna não roda apenas em processadores Intel/AMD (x86); muitos servid
 * **Indicação:** Configure o build para gerar imagens compatíveis com `linux/amd64` e `linux/arm64` simultaneamente. 
 * **Nota:** Esta etapa é opcional e demorada. Ela demonstra como criar uma imagem "universal" que roda tanto em um servidor de alta performance quanto em um Raspberry Pi.
 
-## Dinâmica de Trabalho: Simulando um Squad DevOps
+# Dinâmica de Trabalho: Simulando um Squad DevOps
 
 Siga as regras operacionais abaixo para a organização do grupo:
 
