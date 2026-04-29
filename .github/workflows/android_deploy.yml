@@ -1,8 +1,10 @@
 name: Android Release Pipeline
 on:
   push:
-    branches: [release]
+    branches:
+      - '*'
   workflow_dispatch:
+
 
 jobs:
   build-android:
